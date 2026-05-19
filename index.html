@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CipherSec — Elite cybersecurity expert portfolio. Penetration testing, vulnerability assessment, malware analysis, and security consulting." />
+  <meta name="keywords" content="cybersecurity, penetration testing, ethical hacking, bug bounty, security consultant" />
+  <title>CipherSec | Cybersecurity Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       LOADING SCREEN
+  ══════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">CIPHER<span>SEC</span></div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-text">INITIALIZING SECURE CONNECTION...</div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">CIPHER<span>SEC</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="matrixCanvas"></canvas>
+    <div id="particles-container"></div>
+
+    <div class="hero-content reveal">
+      <div class="hero-badge"><i class="fas fa-shield-halved"></i> Cleared for Operation</div>
+      <h1 class="hero-name">Alex <span class="neon-green">Cipher</span></h1>
+      <h2 class="hero-title">
+        <span class="typing-prefix">I am a </span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="cursor-blink">|</span>
+      </h2>
+      <p class="hero-desc">Ethical hacker. Security researcher. Zero-day hunter.<br>Protecting the digital frontier, one exploit at a time.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-terminal"></i> Hire Me</a>
+        <a href="#portfolio" class="btn btn-outline"><i class="fas fa-code"></i> View Projects</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-num">150+</span><span class="hstat-label">Projects</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hstat-num">800+</span><span class="hstat-label">Vulns Found</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hstat-num">12</span><span class="hstat-label">Certifications</span></div>
+      </div>
+    </div>
+
+    <!-- Terminal Console -->
+    <div class="hero-terminal reveal-delay" id="heroTerminal">
+      <div class="terminal-header">
+        <span class="t-dot red"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot green"></span>
+        <span class="t-title">root@ciphersec:~</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="t-line"><span class="t-prompt">root@ciphersec:~$</span> <span class="t-cmd">./welcome.sh</span></div>
+        <div class="t-line t-output">Welcome to CipherSec Terminal v2.0</div>
+        <div class="t-line t-output">Type <span class="t-highlight">help</span> to see available commands.</div>
+        <div class="t-line t-spacer"></div>
+      </div>
+      <div class="terminal-input-row">
+        <span class="t-prompt">root@ciphersec:~$</span>
+        <input type="text" id="terminalInput" class="terminal-input" placeholder="type a command..." autocomplete="off" spellcheck="false" />
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint">
+      <span>SCROLL DOWN</span>
+      <div class="scroll-arrow"></div>
+    </a>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ABOUT SECTION
+  ══════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// WHO_AM_I</span>
+        <h2 class="section-title">About <span class="neon-green">Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image-col reveal">
+          <div class="about-img-wrap">
+            <div class="about-img-frame">
+              <div class="about-avatar">
+                <i class="fas fa-user-secret"></i>
+              </div>
+              <div class="scan-line"></div>
+            </div>
+            <div class="about-badge-stack">
+              <div class="about-badge"><i class="fas fa-trophy"></i> CEH Certified</div>
+              <div class="about-badge"><i class="fas fa-bug"></i> Bug Bounty Hunter</div>
+              <div class="about-badge"><i class="fas fa-flag"></i> CTF Champion</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-info-col reveal-right">
+          <h3 class="about-name">Alex <span class="neon-blue">Cipher</span></h3>
+          <p class="about-bio">
+            With over <strong>8 years</strong> of hands-on experience in offensive and defensive cybersecurity, I specialize in identifying and eliminating vulnerabilities before malicious actors can exploit them. My work spans Fortune 500 companies, government agencies, and cutting-edge startups.
+          </p>
+          <p class="about-bio">
+            A proud advocate of responsible disclosure, I've reported over <strong>800 verified vulnerabilities</strong> across major bug bounty programs including HackerOne and Bugcrowd. When I'm not breaking things, I'm building tools that help others stay secure.
+          </p>
+
+          <div class="cert-grid">
+            <div class="cert-chip"><i class="fas fa-certificate"></i> CEH</div>
+            <div class="cert-chip"><i class="fas fa-certificate"></i> OSCP</div>
+            <div class="cert-chip"><i class="fas fa-certificate"></i> CISSP</div>
+            <div class="cert-chip"><i class="fas fa-certificate"></i> CompTIA Security+</div>
+            <div class="cert-chip"><i class="fas fa-certificate"></i> eJPT</div>
+            <div class="cert-chip"><i class="fas fa-certificate"></i> AWS Security</div>
+          </div>
+
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-year">2022 — Present</span>
+                <h4>Senior Penetration Tester</h4>
+                <p>RedForce Security Labs</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-year">2019 — 2022</span>
+                <h4>Security Researcher</h4>
+                <p>CyberShield Inc.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-year">2016 — 2019</span>
+                <h4>SOC Analyst</h4>
+                <p>NexaGuard Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SERVICES SECTION
+  ══════════════════════════════════════ -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// SERVICES</span>
+        <h2 class="section-title">What I <span class="neon-blue">Offer</span></h2>
+        <p class="section-sub">Comprehensive cybersecurity solutions tailored to your threat model.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-crosshairs"></i></div>
+          <h3>Penetration Testing</h3>
+          <p>Full-scope red team engagements simulating real-world attacks on your infrastructure, applications, and personnel.</p>
+          <div class="service-tags"><span>Network</span><span>Web App</span><span>Social Eng.</span></div>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <h3>Vulnerability Assessment</h3>
+          <p>Systematic evaluation of your security posture to identify, quantify, and prioritize critical vulnerabilities.</p>
+          <div class="service-tags"><span>CVSS</span><span>OWASP</span><span>NIST</span></div>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Network Security</h3>
+          <p>Deep packet analysis, firewall audits, IDS/IPS tuning, and zero-trust architecture design.</p>
+          <div class="service-tags"><span>Firewall</span><span>VPN</span><span>Zero-Trust</span></div>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-virus"></i></div>
+          <h3>Malware Analysis</h3>
+          <p>Static and dynamic analysis of malicious software, reverse engineering binaries, and threat intelligence reporting.</p>
+          <div class="service-tags"><span>Reverse Eng.</span><span>Sandbox</span><span>IOC</span></div>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-bug"></i></div>
+          <h3>Bug Bounty Hunting</h3>
+          <p>Professional bug bounty program management and consultation. Maximize ROI on your vulnerability disclosure program.</p>
+          <div class="service-tags"><span>HackerOne</span><span>Bugcrowd</span><span>Intigriti</span></div>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+          <h3>Security Consulting</h3>
+          <p>Strategic security advisory services, compliance assistance (ISO 27001, SOC2, GDPR), and CISO-as-a-service.</p>
+          <div class="service-tags"><span>ISO 27001</span><span>SOC2</span><span>GDPR</span></div>
+          <div class="service-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PORTFOLIO SECTION
+  ══════════════════════════════════════ -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// PROJECTS</span>
+        <h2 class="section-title">My <span class="neon-green">Arsenal</span></h2>
+        <p class="section-sub">Open-source tools and research projects in offensive security.</p>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <div class="project-icon-wrap" style="--icon-color:#00ff9f"><i class="fas fa-radar"></i></div>
+          <h3>VulnScan Pro</h3>
+          <p class="project-desc">Advanced vulnerability scanner with CVE database integration, auto-exploitation modules, and PDF report generation.</p>
+          <div class="project-tech"><span>Python</span><span>Nmap</span><span>SQLite</span><span>FastAPI</span></div>
+          <div class="project-actions">
+            <a href="#" class="btn-sm btn-green"><i class="fas fa-play"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon-wrap" style="--icon-color:#00e5ff"><i class="fas fa-fish"></i></div>
+          <h3>PhishGuard</h3>
+          <p class="project-desc">ML-powered phishing URL detector with real-time browser extension, achieving 97.3% detection accuracy.</p>
+          <div class="project-tech"><span>Python</span><span>TensorFlow</span><span>Chrome Ext.</span></div>
+          <div class="project-actions">
+            <a href="#" class="btn-sm btn-green"><i class="fas fa-play"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon-wrap" style="--icon-color:#ff6b35"><i class="fas fa-wave-square"></i></div>
+          <h3>PacketSpy</h3>
+          <p class="project-desc">Real-time network packet analyzer with protocol dissection, traffic visualization, and anomaly detection.</p>
+          <div class="project-tech"><span>Python</span><span>Scapy</span><span>Wireshark</span><span>D3.js</span></div>
+          <div class="project-actions">
+            <a href="#" class="btn-sm btn-green"><i class="fas fa-play"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon-wrap" style="--icon-color:#b44fff"><i class="fas fa-eye"></i></div>
+          <h3>OSINTrix</h3>
+          <p class="project-desc">Automated OSINT framework for target reconnaissance — aggregates data from 40+ sources into visual graphs.</p>
+          <div class="project-tech"><span>Python</span><span>Neo4j</span><span>Shodan API</span></div>
+          <div class="project-actions">
+            <a href="#" class="btn-sm btn-green"><i class="fas fa-play"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon-wrap" style="--icon-color:#ffca28"><i class="fas fa-key"></i></div>
+          <h3>PasswdAnalyzer</h3>
+          <p class="project-desc">Password strength analyzer and cracking simulator. Estimates crack time, generates secure alternatives.</p>
+          <div class="project-tech"><span>Python</span><span>Hashcat</span><span>React</span></div>
+          <div class="project-actions">
+            <a href="#" class="btn-sm btn-green"><i class="fas fa-play"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon-wrap" style="--icon-color:#00ff9f"><i class="fas fa-lock-open"></i></div>
+          <h3>CryptoAudit</h3>
+          <p class="project-desc">Automated cryptographic implementation auditor. Detects weak ciphers, deprecated protocols, and misconfigurations.</p>
+          <div class="project-tech"><span>Go</span><span>OpenSSL</span><span>Docker</span></div>
+          <div class="project-actions">
+            <a href="#" class="btn-sm btn-green"><i class="fas fa-play"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SKILLS SECTION
+  ══════════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// SKILL_MATRIX</span>
+        <h2 class="section-title">Technical <span class="neon-green">Proficiency</span></h2>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-bars reveal">
+          <div class="skill-item">
+            <div class="skill-label"><span>Ethical Hacking</span><span class="skill-pct">95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95" style="--bar-color:#00ff9f"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Linux / Unix</span><span class="skill-pct">92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92" style="--bar-color:#00e5ff"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Python</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90" style="--bar-color:#00ff9f"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Networking</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88" style="--bar-color:#00e5ff"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Web Security</span><span class="skill-pct">93%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="93" style="--bar-color:#00ff9f"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Reverse Engineering</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80" style="--bar-color:#b44fff"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Digital Forensics</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85" style="--bar-color:#00e5ff"></div></div>
+          </div>
+        </div>
+
+        <div class="skills-radar reveal-right">
+          <div class="radar-wrap">
+            <canvas id="radarChart" width="320" height="320"></canvas>
+          </div>
+          <div class="tool-chips">
+            <span class="chip"><i class="fas fa-terminal"></i> Metasploit</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Burp Suite</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Nmap</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Wireshark</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Kali Linux</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Ghidra</span>
+            <span class="chip"><i class="fas fa-terminal"></i> IDA Pro</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Cobalt Strike</span>
+            <span class="chip"><i class="fas fa-terminal"></i> Maltego</span>
+            <span class="chip"><i class="fas fa-terminal"></i> SQLMap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STATS SECTION
+  ══════════════════════════════════════ -->
+  <section id="stats" class="section stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-folder-open"></i></div>
+          <div class="stat-num" data-target="150">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-skull-crossbones"></i></div>
+          <div class="stat-num" data-target="830">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Vulnerabilities Found</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-flag"></i></div>
+          <div class="stat-num" data-target="340">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">CTF Challenges Solved</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-medal"></i></div>
+          <div class="stat-num" data-target="12">0</div>
+          <div class="stat-plus"></div>
+          <div class="stat-label">Certifications Earned</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BLOG SECTION
+  ══════════════════════════════════════ -->
+  <section id="blog" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// INTEL_FEED</span>
+        <h2 class="section-title">Latest <span class="neon-blue">Posts</span></h2>
+        <p class="section-sub">Research, write-ups, and threat intelligence from the field.</p>
+      </div>
+
+      <div class="blog-filters reveal">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="writeup">Write-Ups</button>
+        <button class="filter-btn" data-cat="tutorial">Tutorials</button>
+        <button class="filter-btn" data-cat="research">Research</button>
+        <button class="filter-btn" data-cat="news">Threat Intel</button>
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
+        <!-- Blog cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TESTIMONIALS SECTION
+  ══════════════════════════════════════ -->
+  <section id="testimonials" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// CLIENT_LOGS</span>
+        <h2 class="section-title">What Clients <span class="neon-green">Say</span></h2>
+      </div>
+
+      <div class="testimonial-wrap reveal">
+        <div class="testimonial-slider" id="testimonialSlider">
+          <div class="testimonial-track" id="testimonialTrack">
+
+            <div class="testimonial-card">
+              <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+              <p>"Alex identified 14 critical vulnerabilities in our infrastructure that our internal team had completely missed. His penetration test report was the most comprehensive we've ever received."</p>
+              <div class="t-author">
+                <div class="t-avatar"><i class="fas fa-user-shield"></i></div>
+                <div><strong>Marcus Chen</strong><span>CTO, FinVault Technologies</span></div>
+              </div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+              <p>"We hired Alex for a red team engagement and the results were eye-opening. He breached our perimeter in under 48 hours, helped us understand every step, and then guided remediation personally."</p>
+              <div class="t-author">
+                <div class="t-avatar"><i class="fas fa-user-shield"></i></div>
+                <div><strong>Sarah Novak</strong><span>CISO, Nexarion Health</span></div>
+              </div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+              <p>"Outstanding bug bounty consultation. Alex helped us structure our VDP, tripled our researcher engagement, and within a month we had our first critical report. Invaluable expertise."</p>
+              <div class="t-author">
+                <div class="t-avatar"><i class="fas fa-user-shield"></i></div>
+                <div><strong>James Okafor</strong><span>Head of Security, Stratum Labs</span></div>
+              </div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+              <p>"Alex's malware analysis saved our company from a sophisticated supply chain attack. His forensic report was detailed enough for law enforcement and actionable enough for our dev team."</p>
+              <div class="t-author">
+                <div class="t-avatar"><i class="fas fa-user-shield"></i></div>
+                <div><strong>Priya Menon</strong><span>VP Engineering, CloudBridger</span></div>
+              </div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="t-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="t-dots" id="tDots"></div>
+          <button class="t-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTACT SECTION
+  ══════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// ESTABLISH_CONNECTION</span>
+        <h2 class="section-title">Get In <span class="neon-green">Touch</span></h2>
+        <p class="section-sub">Ready to secure your systems? Let's talk.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <span>alex@ciphersec.io</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
+            <div>
+              <strong>Location</strong>
+              <span>Remote — Worldwide</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Response Time</strong>
+              <span>Within 24 hours</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-keybase"></i></div>
+            <div>
+              <strong>PGP Key</strong>
+              <span>0xDEAD BEEF C1PH 3R5E</span>
+            </div>
+          </div>
+
+          <div class="availability">
+            <div class="avail-dot"></div>
+            <span>Available for new projects</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select service...</option>
+              <option>Penetration Testing</option>
+              <option>Vulnerability Assessment</option>
+              <option>Security Consulting</option>
+              <option>Bug Bounty Program</option>
+              <option>Other</option>
+            </select>
+            <span class="form-error" id="subjectError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe your security needs..."></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">
+            <i class="fas fa-paper-plane"></i> Send Secure Message
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle"></i> Message received. Secure handshake established.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">CIPHER<span>SEC</span></div>
+          <p>Protecting the digital frontier through offensive security, research, and responsible disclosure.</p>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="HackerOne"><i class="fas fa-bug"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Penetration Testing</a></li>
+            <li><a href="#services">Vulnerability Assessment</a></li>
+            <li><a href="#services">Network Security</a></li>
+            <li><a href="#services">Malware Analysis</a></li>
+            <li><a href="#services">Security Consulting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">CVE Database</a></li>
+            <li><a href="#">Security Tools</a></li>
+            <li><a href="#">CTF Write-ups</a></li>
+            <li><a href="#">PGP Key</a></li>
+            <li><a href="#">Hall of Fame</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 CipherSec. All rights reserved. Built with <span class="neon-green">0x1337</span> passion.</span>
+        <span>Ethical Hacking. Responsible Disclosure.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
